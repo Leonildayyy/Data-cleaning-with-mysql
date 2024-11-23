@@ -6,7 +6,7 @@ STR_TO_DATE(SaleDate, '%M %d, %Y') AS ConvertedSaleDate
 FROM Nashville_Housing;
 
 UPDATE Nashville_Housing
-SET SaleDate = ConvertedSaleDate;
+SET SaleDate = STR_TO_DATE(SaleDate, '%M %d, %Y');
 
 ###populate Property Address data 
 ##同一个parcel id, property address应该一样，用join和isnull（）实现替换
